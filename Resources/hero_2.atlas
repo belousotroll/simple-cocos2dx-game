@@ -1,0 +1,202 @@
+
+hero_2.png
+size: 512,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/death_trash/death0001
+  rotate: false
+  xy: 2, 2
+  size: 53, 58
+  orig: 53, 58
+  offset: 0, 0
+  index: -1
+images/death_trash/death0002
+  rotate: false
+  xy: 130, 130
+  size: 53, 58
+  orig: 53, 58
+  offset: 0, 0
+  index: -1
+images/death_trash/death0003
+  rotate: false
+  xy: 204, 195
+  size: 53, 58
+  orig: 53, 58
+  offset: 0, 0
+  index: -1
+images/death_trash/death0004
+  rotate: false
+  xy: 259, 195
+  size: 53, 58
+  orig: 53, 58
+  offset: 0, 0
+  index: -1
+images/death_trash/death0005
+  rotate: false
+  xy: 314, 195
+  size: 53, 58
+  orig: 53, 58
+  offset: 0, 0
+  index: -1
+images/death_trash/death0006
+  rotate: false
+  xy: 369, 195
+  size: 53, 58
+  orig: 53, 58
+  offset: 0, 0
+  index: -1
+images/death_trash/death0007
+  rotate: false
+  xy: 424, 195
+  size: 53, 58
+  orig: 53, 58
+  offset: 0, 0
+  index: -1
+images/death_trash/death0008
+  rotate: false
+  xy: 76, 67
+  size: 53, 58
+  orig: 53, 58
+  offset: 0, 0
+  index: -1
+images/death_trash/death0009
+  rotate: false
+  xy: 131, 70
+  size: 53, 58
+  orig: 53, 58
+  offset: 0, 0
+  index: -1
+images/death_trash/death0010
+  rotate: false
+  xy: 185, 130
+  size: 53, 58
+  orig: 53, 58
+  offset: 0, 0
+  index: -1
+images/death_trash/death0011
+  rotate: false
+  xy: 186, 70
+  size: 53, 58
+  orig: 53, 58
+  offset: 0, 0
+  index: -1
+images/hero_2/armL1
+  rotate: false
+  xy: 494, 224
+  size: 16, 15
+  orig: 16, 15
+  offset: 0, 0
+  index: -1
+images/hero_2/armL2
+  rotate: true
+  xy: 57, 40
+  size: 20, 16
+  orig: 20, 16
+  offset: 0, 0
+  index: -1
+images/hero_2/body
+  rotate: false
+  xy: 276, 134
+  size: 24, 24
+  orig: 24, 24
+  offset: 0, 0
+  index: -1
+images/hero_2/cloak
+  rotate: true
+  xy: 240, 131
+  size: 27, 34
+  orig: 27, 34
+  offset: 0, 0
+  index: -1
+images/hero_2/head
+  rotate: false
+  xy: 404, 155
+  size: 32, 38
+  orig: 32, 38
+  offset: 0, 0
+  index: -1
+images/hero_2/head2
+  rotate: false
+  xy: 438, 155
+  size: 32, 38
+  orig: 32, 38
+  offset: 0, 0
+  index: -1
+images/hero_2/head3
+  rotate: true
+  xy: 472, 161
+  size: 32, 38
+  orig: 32, 38
+  offset: 0, 0
+  index: -1
+images/hero_2/leg1
+  rotate: false
+  xy: 479, 219
+  size: 13, 20
+  orig: 13, 20
+  offset: 0, 0
+  index: -1
+images/hero_2/shadow
+  rotate: false
+  xy: 479, 241
+  size: 31, 12
+  orig: 31, 12
+  offset: 0, 0
+  index: -1
+images/hero_2/smoke
+  rotate: false
+  xy: 302, 153
+  size: 5, 5
+  orig: 5, 5
+  offset: 0, 0
+  index: -1
+images/hero_2/teleport
+  rotate: false
+  xy: 2, 62
+  size: 72, 63
+  orig: 72, 63
+  offset: 0, 0
+  index: -1
+images/hero_2/teleport2
+  rotate: false
+  xy: 130, 190
+  size: 72, 63
+  orig: 72, 63
+  offset: 0, 0
+  index: -1
+images/hero_2/teleport3
+  rotate: false
+  xy: 57, 26
+  size: 13, 12
+  orig: 13, 12
+  offset: 0, 0
+  index: -1
+images/hero_2/wave_sniper
+  rotate: false
+  xy: 2, 127
+  size: 126, 126
+  orig: 126, 126
+  offset: 0, 0
+  index: -1
+images/hero_2/weapon
+  rotate: false
+  xy: 240, 160
+  size: 72, 33
+  orig: 72, 33
+  offset: 0, 0
+  index: -1
+images/hero_3/shot/shot0001
+  rotate: false
+  xy: 314, 155
+  size: 43, 38
+  orig: 43, 38
+  offset: 0, 0
+  index: -1
+images/hero_3/shot/shot0002
+  rotate: false
+  xy: 359, 155
+  size: 43, 38
+  orig: 43, 38
+  offset: 0, 0
+  index: -1
