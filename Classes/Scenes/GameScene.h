@@ -3,6 +3,8 @@
 
 #include "cocos2d.h"
 
+#include "StateMachine/StateMachine.h"
+
 class Hero;
 
 class GameScene : public cocos2d::Scene
@@ -38,6 +40,8 @@ private /*attributes*/:
 
     //! @brief ”правл€емый игровой персонаж
     Hero* mHero = nullptr;
+    //! @brief ...
+    StateMachine mStateMachine;
 };
 
 #endif // __GAMESCENE_SCENE_H__

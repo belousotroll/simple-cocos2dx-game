@@ -5,7 +5,7 @@
 
 #include <spine/spine-cocos2dx.h>
 
-/// STL
+// STL
 #include <vector>
 
 
@@ -46,9 +46,7 @@ AppDelegate::~AppDelegate()
 
 void AppDelegate::initGLContextAttrs()
 {
-    // set OpenGL context attributes: red,green,blue,alpha,depth,stencil,multisamplesCount
     GLContextAttrs glContextAttrs = {8, 8, 8, 8, 24, 8, 0};
-
     GLView::setGLContextAttrs(glContextAttrs);
 }
 
@@ -103,7 +101,7 @@ void AppDelegate::initOpenGL()
     {
         // Если текущая платформа — десктоп, то ...
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32) || (CC_TARGET_PLATFORM == CC_PLATFORM_MAC) || (CC_TARGET_PLATFORM == CC_PLATFORM_LINUX)
-        //glview = GLViewImpl::createWithFullScreen("BeachDriver");
+        //glview = GLViewImpl::createWithFullScreen("Butcher");
         glview = GLViewImpl::createWithRect("Butcher", { 0, 0, designResolutionSize.width, designResolutionSize.height });
 #else
         glview = GLViewImpl::create("Butcher");

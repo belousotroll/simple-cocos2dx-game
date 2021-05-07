@@ -2,9 +2,8 @@
 #include "Scenes/MenuScene.h"
 
 #include "SimpleAudioEngine.h"
-
+#include <unordered_map>
 #include "GameObjects/Hero.h"
-#include "StateMachine/PlayerStates.h"
 
 USING_NS_CC;
 
@@ -26,6 +25,9 @@ bool GameScene::init()
 	initMouse();
 	scheduleUpdate();
 
+	// ”станавливаем стандартное состо€ние (ничего не делает хо-хо-хо)
+	mStateMachine.setState<IdleState>(mHero);
+
 	return true;
 }
 
@@ -40,11 +42,11 @@ void GameScene::onKeyPressed(EventKeyboard::KeyCode pKeyCode, Event* pEvent)
 	{
 		//  лавиша "S" останавливает любое действие, как во всех MOBA-играх.
 	case EventKeyboard::KeyCode::KEY_S:
-		mHero->setStateAndExec(&IState::gIdleState);
+		mStateMachine.setState<IdleState>(mHero);
 		return;
 		//  лавиша "W" заставл€ет персонажа атаковать
 	case EventKeyboard::KeyCode::KEY_W:
-		mHero->setStateAndExec(&IState::gAttackState);
+		mStateMachine.setState<AttackState>(mHero);
 		return;
 	case EventKeyboard::KeyCode::KEY_ESCAPE:
 		goToMenuScene(this);
@@ -56,12 +58,10 @@ void GameScene::onMouseDown(EventMouse* event)
 {
 	if (event->getMouseButton() == cocos2d::EventMouse::MouseButton::BUTTON_RIGHT)
 	{
-		// @todo –азделить об€заности между AMovableObject и самим перемещением
-
 		// Ќастраиваем атрибуты персонажа дл€ корректного перемещени€
 		mHero->setDirectionToMove(mHero->getPosition(), event->getLocationInView());
-		// ћен€ем состо€ние на "¬ движении".
-		mHero->setStateAndExec(&IState::gMoveState);
+		// ...
+		mStateMachine.setState<MoveState>(mHero);
 	}
 }
 

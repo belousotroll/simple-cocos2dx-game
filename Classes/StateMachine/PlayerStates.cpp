@@ -1,9 +1,6 @@
 #include "PlayerStates.h"
 #include "GameObjects/Hero.h"
-
-IdleState IState::gIdleState;
-MoveState IState::gMoveState;
-AttackState IState::gAttackState;
+#include "StateMachine.h"
 
 void IdleState::exec(Hero* pHero) noexcept
 {
@@ -19,12 +16,6 @@ void IdleState::update(Hero* pHero, const float pDeltaTime) noexcept
 
 void MoveState::exec(Hero* pHero) noexcept
 {
-	// Чтобы анимация не прерывалась.
-	if (pHero->getState() == &IState::gMoveState)
-	{
-		return;
-	}
-
 	auto skeletonAnimation = pHero->getSkeletonAnimation();
 	skeletonAnimation->setAnimation(0, "move", true);
 }
@@ -38,7 +29,7 @@ void MoveState::update(Hero* pHero, const float pDeltaTime) noexcept
 
 	if (pHero->getPosition().distance(pHero->getFinalPoint()) <= 5.f)
 	{
-		pHero->setStateAndExec(&IState::gIdleState);
+		pHero->getState()->getStateMachine()->setState<IdleState>(pHero);
 	}
 }
 
@@ -50,6 +41,11 @@ void AttackState::exec(Hero* pHero) noexcept
 
 void AttackState::update(Hero* pHero, const float pDeltaTime) noexcept
 {
-	// Тут можно, допустим, создавать объект "Граната" или что-то ещё.
+	if (const auto track = pHero->getSkeletonAnimation()->getCurrent(); 
+		track->trackTime >= track->animationEnd)
+	{
+		pHero->getState()->getStateMachine()->setState<IdleState>(pHero);
+	}
+
 	return;
 }

@@ -8,15 +8,16 @@
 class IState;
 
 //! @class Класс игрового объекта "Герой".
-class Hero : public cocos2d::Node, public AMovableObject
+class Hero : public AMovableObject, public cocos2d::Node
 {
 	//! @brief Приватный конструктор
 	Hero();
+
 public:
+	//! @brief Виртуальный деструктор
+	~Hero() override = default;
 	//! @brief Создает экземпляр класса "Герой"
 	static Hero* create();
-	//! @brief Обновляет поворот персонажа
-	void updateFlipping();
 	//! @brief Устанавливает состояние персонажа и выполняет его
 	void setStateAndExec(IState* pState);
 	//! @brief Возвращает текущее состояние персонажа
@@ -28,7 +29,7 @@ public:
 
 private:
 	//! @brief Текущее состояние персонажа
-	IState* mCurrentState;
+	IState* mState;
 	//! @brief Скелетная анимация
 	spine::SkeletonAnimation* mSkeleton;
 };

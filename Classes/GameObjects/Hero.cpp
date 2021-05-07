@@ -3,9 +3,9 @@
 #include "StateMachine/PlayerStates.h"
 
 Hero::Hero()
+	: mSkeleton(spine::SkeletonAnimation::createWithJsonFile("hero_2.json", "hero_2.atlas"))
+	, mState(nullptr)
 {
-	mSkeleton = spine::SkeletonAnimation::createWithJsonFile("hero_2.json", "hero_2.atlas");
-	setStateAndExec(&IState::gIdleState);
 	addChild(mSkeleton);
 }
 
@@ -16,7 +16,6 @@ Hero* Hero::create()
 	if (hero && hero->init())
 	{
 		hero->autorelease();
-		hero->setStateAndExec(new IdleState);
 		return hero;
 	}
 	
@@ -24,26 +23,30 @@ Hero* Hero::create()
 	return nullptr;
 }
 
-void Hero::updateFlipping()
-{
-	setScaleX(getScaleX() * (mDirectionX > 0.f) ? -1.f : 1.f);
-}
-
 void Hero::setStateAndExec(IState* pState)
 {
 	pState->exec(this);
-	mCurrentState = pState;
+	mState = pState;
 }
 
 IState* Hero::getState() const
 {
-	return mCurrentState;
+	return mState;
 }
 
 void Hero::update(float pDeltaTime)
 {
-	updateFlipping();
-	mCurrentState->update(this, pDeltaTime);
+	// ≈сли нет состо€ни€, прерываем операцию...
+	if (mState == nullptr) return;
+
+	const auto updateScale = [&](bool curScale, bool curDirection)
+	{
+		if (curScale == curDirection) setScaleX(getScaleX() * -1.f);
+	};
+
+	updateScale(getScaleX() > 0.f, mDirectionX > 0.f);
+
+	mState->update(this, pDeltaTime);
 }
 
 spine::SkeletonAnimation* Hero::getSkeletonAnimation() const
