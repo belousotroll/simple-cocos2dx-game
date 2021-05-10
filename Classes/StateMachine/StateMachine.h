@@ -53,9 +53,9 @@ private /*methods*/:
 	State* findState(Hero* pHero)
 	{
 		const auto range = mHeroToState.equal_range(pHero);
+		State temp;
 		for (auto iter = range.first; iter != range.second; iter++)
 		{
-			State temp;
 			// todo: *
 			if (iter->second->getName() == temp.getName())
 			{
